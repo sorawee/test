@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Installing test and its dependencies
-        run:
+        run: |
           echo $(($(nproc) + 1))
           export cpus=$(grep -c ^processor /proc/cpuinfo)
           echo $((cpus+1))
