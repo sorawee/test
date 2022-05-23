@@ -6,9 +6,9 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-      - uses: Bogdanp/setup-racket@v1.7
+      - uses: Bogdanp/setup-racket@v1.8
         with:
-          architecture: "x86"
+          architecture: "x64"
           distribution: "minimal"
           variant: "CS"
           version: "current"
