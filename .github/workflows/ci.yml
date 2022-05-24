@@ -6,6 +6,9 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
+      # - name: foo
+      #   run: |
+      #     sudo dpkg --add-architecture i386 && sudo apt update && sudo apt install -y libc6:i386
       - uses: Bogdanp/setup-racket@v1.8.1
         with:
           architecture: "x86"
