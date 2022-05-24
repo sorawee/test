@@ -4,6 +4,10 @@ jobs:
   build:
     name: Build on Racket
     runs-on: ubuntu-20.04
+    strategy:
+      fail-fast: false
+      matrix:
+        racket-version: ["8.5", "8.4", "8.3", "current"]
     steps:
       - uses: actions/checkout@v2
       # - name: foo
@@ -11,10 +15,10 @@ jobs:
       #     sudo dpkg --add-architecture i386 && sudo apt update && sudo apt install -y libc6:i386
       - uses: Bogdanp/setup-racket@v1.8.1
         with:
-          architecture: "x86"
+          architecture: "x64"
           distribution: "minimal"
           variant: "CS"
-          version: "current"
+          version: ${{ matrix.racket-version }}
       - name: Run
         run: |
           racket main.rkt
